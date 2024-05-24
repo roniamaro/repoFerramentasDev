@@ -26,7 +26,7 @@ paths:
       summary: Recupera todas as especialidades.
       responses:
         200:
-          description: 
+          description: Success
           content:
             application/json:
               schema:
@@ -38,3 +38,30 @@ paths:
                       type: integer
                     descricao:
                       type: string
+                      
+  /especialidades/{id}:
+    parameters: 
+      - name: id
+        in: path
+        schema:
+          type: integer
+        required: true
+    get:
+      summary: Recupera uma especialidade por id.
+      responses:
+        200:
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                  descricao:
+                    type: string
+        404:
+          description: Especialidade não encontrada
+          content:
+            application/json:
+              example: "Not found"
