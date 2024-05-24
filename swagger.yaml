@@ -14,3 +14,27 @@ info:
 externalDocs:
   description: Documentação externa
   url: http://mockapi.io
+
+servers: 
+- url: https://6650a8c5ec9b4a4a6032e9bf.mockapi.io/
+  description: API de QA
+- url: ""
+  description: API de PROD
+paths:
+  /especialidades:
+    get:
+      summary: Recupera todas as especialidades.
+      responses:
+        200:
+          description: 
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: integer
+                    descricao:
+                      type: string
