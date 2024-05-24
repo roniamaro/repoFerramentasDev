@@ -20,6 +20,7 @@ servers:
   description: API de QA
 - url: ""
   description: API de PROD
+
 paths:
   /especialidades:
     get:
@@ -38,7 +39,37 @@ paths:
                       type: integer
                     descricao:
                       type: string
-                      
+    
+    post:
+      summary: Cria uma nova especialidade.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                descricao:
+                  type: string
+      responses:
+        201:
+          description: Created
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: integer
+                    descricao:
+                      type: string
+        500:
+          description: Internal server error
+          content:
+            application/json:
+              example: "Internal server error"
+              
   /especialidades/{id}:
     parameters: 
       - name: id
@@ -60,6 +91,58 @@ paths:
                     type: integer
                   descricao:
                     type: string
+        404:
+          description: Especialidade não encontrada
+          content:
+            application/json:
+              example: "Not found"
+              
+    put:
+      summary: Atualiza uma especialidade por id.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                descricao:
+                  type: string
+      responses:
+        200: 
+          description: atualized
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: integer
+                    descricao:
+                      type: string
+        404:
+          description: Especialidade não encontrada
+          content:
+            application/json:
+              example: "Not found"
+    
+    delete:
+      summary: Deleta uma especialidade por id.
+      responses:
+        200:
+          description: deleted
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: integer
+                    descricao:
+                      type: string
         404:
           description: Especialidade não encontrada
           content:
