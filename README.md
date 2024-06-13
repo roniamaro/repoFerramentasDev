@@ -34,4 +34,15 @@ Um repositório criado para armazenar os projetos desenvolvidos em aula.
 
   500 — Internal Server Error: The server has encountered an unexpected error and cannot complete the request.
 
+  É possível rodar o Swagger Editor localmente pra isso precisamos usar em um servidor Docker:
+    docker pull swaggerapi/swagger-editor
+    docker run -d -p 80:8080 swaggerapi/swagger-editor
+
+    docker run -d -p 80:8080 -v $(pwd):/tmp -e SWAGGER_FILE=/tmp/swagger.json swaggerapi/swagger-editor
+
+  You can specify a different base url via BASE_URL variable for accessing the application - for example if you want the application to be available at http://localhost/swagger-editor/:
+    docker run -d -p 80:8080 -e BASE_URL=/swagger-editor swaggerapi/swagger-editor
+
+  É possível rodar também o Swagger UI localmente e disponibilizar aos clientes via Docker.
+
 # 4.IA

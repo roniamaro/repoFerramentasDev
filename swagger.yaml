@@ -15,11 +15,30 @@ externalDocs:
   description: Documentação externa
   url: http://mockapi.io
 
-servers: 
-- url: https://6650a8c5ec9b4a4a6032e9bf.mockapi.io/
-  description: API de QA
-- url: ""
-  description: API de PROD
+servers:
+  - url: https://6650a8c5ec9b4a4a6032e9bf.mockapi.io/
+    description: API de QA
+  - url: ""
+    description: API de PROD
+
+components:
+  schemas:
+    Especialidade:
+      type: object
+      properties:
+        id:
+          type: integer
+        descricao:
+          type: string
+
+  securitySchemes:
+    auth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+
+security:
+  - auth: []
 
 paths:
   /especialidades:
@@ -33,13 +52,10 @@ paths:
               schema:
                 type: array
                 items:
-                  type: object
-                  properties:
-                    id:
-                      type: integer
-                    descricao:
-                      type: string
-    
+                  $ref: "#/components/schemas/Especialidade"
+      security:
+        - auth: []
+
     post:
       summary: Cria uma nova especialidade.
       requestBody:
@@ -58,20 +74,15 @@ paths:
               schema:
                 type: array
                 items:
-                  type: object
-                  properties:
-                    id:
-                      type: integer
-                    descricao:
-                      type: string
+                  $ref: "#/components/schemas/Especialidade"
         500:
           description: Internal server error
           content:
             application/json:
               example: "Internal server error"
-              
+
   /especialidades/{id}:
-    parameters: 
+    parameters:
       - name: id
         in: path
         schema:
@@ -85,18 +96,13 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  id:
-                    type: integer
-                  descricao:
-                    type: string
+                $ref: "#/components/schemas/Especialidade"
         404:
           description: Especialidade não encontrada
           content:
             application/json:
               example: "Not found"
-              
+
     put:
       summary: Atualiza uma especialidade por id.
       requestBody:
@@ -108,25 +114,20 @@ paths:
                 descricao:
                   type: string
       responses:
-        200: 
+        200:
           description: atualized
           content:
             application/json:
               schema:
                 type: array
                 items:
-                  type: object
-                  properties:
-                    id:
-                      type: integer
-                    descricao:
-                      type: string
+                  $ref: "#/components/schemas/Especialidade"
         404:
           description: Especialidade não encontrada
           content:
             application/json:
               example: "Not found"
-    
+
     delete:
       summary: Deleta uma especialidade por id.
       responses:
@@ -137,12 +138,7 @@ paths:
               schema:
                 type: array
                 items:
-                  type: object
-                  properties:
-                    id:
-                      type: integer
-                    descricao:
-                      type: string
+                  $ref: "#/components/schemas/Especialidade"
         404:
           description: Especialidade não encontrada
           content:
