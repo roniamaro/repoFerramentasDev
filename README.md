@@ -2,6 +2,20 @@
 Um repositório criado para armazenar os projetos desenvolvidos em aula.
 
 # 1.Git e GitHub e Terminais do Linux e Windows
+  - Curso: Git e GitHub: compartilhando e colaborando em projetos
+    Crie seu portfólio de projetos no GitHub
+    Aprenda a compartilhar o código de seus projetos no GitHub
+    Entenda como colaborar em projetos
+    Faça o versionamento de um projeto de software utilizando o Git
+    Lide com conflitos em códigos utilizando o Git
+    Analise e modifique o histórico de commits de um repositório Git
+
+  - Curso: Git e GitHub: dominando controle de versão de código
+    Visualize as alterações de um projeto com git
+    Trabalhe com branches usando git
+    Entenda como usar merge e rebase
+    Conheça working tree e staging area
+    Trabalhe com tags e releases no GitHub
 
 # 2.Regex
 
@@ -19,25 +33,17 @@ Um repositório criado para armazenar os projetos desenvolvidos em aula.
     201 — Created: The request succeeded and a new resource was created. This is usually the response after POST or PUT requests. 
 
   202 — Accepted: The request was accepted but is still in progress. It’s used for cases where another server handles the request or for batch processing. 
-
   204 — No Content: The request was successfully processed, but there is no content. The headers may be useful. 
-
   400 — Bad Request: The server can’t or won’t process the request due to a client error. For example, invalid request message framing, deceptive request routing, size too large, etc.
-
   401 — Unauthorized: The user doesn’t have valid authentication credentials to get the requested resource.
-
   404 — Not Found: The server can’t find the requested resource, and no redirection has been set. 404 errors can harm your SEO efforts.
-
   408 — Request Timeout: The server timed out waiting because the client didn’t produce a request within the allotted time.
-
   413 — Payload Too Large: The client’s request is larger than the server’s defined limits, and the server refuses to process it.
-
   500 — Internal Server Error: The server has encountered an unexpected error and cannot complete the request.
 
   É possível rodar o Swagger Editor localmente pra isso precisamos usar em um servidor Docker:
     docker pull swaggerapi/swagger-editor
     docker run -d -p 80:8080 swaggerapi/swagger-editor
-
     docker run -d -p 80:8080 -v $(pwd):/tmp -e SWAGGER_FILE=/tmp/swagger.json swaggerapi/swagger-editor
 
   You can specify a different base url via BASE_URL variable for accessing the application - for example if you want the application to be available at http://localhost/swagger-editor/:
@@ -46,7 +52,7 @@ Um repositório criado para armazenar os projetos desenvolvidos em aula.
   É possível rodar também o Swagger UI localmente e disponibilizar aos clientes via Docker.
 
 # 4.IA
-  ## ChatGPT: desvendando a IA em conversas e suas aplicações
+  - ChatGPT: desvendando a IA em conversas e suas aplicações
     Preparando o ambiente: antes de começar
     Link: https://chatgpt.com/
     User: login com Microsoft
@@ -97,7 +103,7 @@ Um repositório criado para armazenar os projetos desenvolvidos em aula.
     PromptHero
     É um site incrível que divulga milhões de resultados de diferentes IAs, como Stable Diffusion e Midjourney, além de mostrar qual é a entrada que gerou cada imagem ou resultado. O uso é gratuito.
 
-  ## ChatGPT e programação: aumente sua produtividade
+  - ChatGPT e programação: aumente sua produtividade
     Objetivo:
     Entender algoritimos;
     Aprender conceitos;
@@ -111,6 +117,6 @@ Um repositório criado para armazenar os projetos desenvolvidos em aula.
       CRUD (Create, ead, Update, Delete);
       Banco de dados;
 
-  ## ChatGPT: otimizando a qualidade dos resultados
+  - ChatGPT: otimizando a qualidade dos resultados
   
-  ## GitHub Copilot e ChatGPT: impulsionando seu desenvolvimento com IA
+  - GitHub Copilot e ChatGPT: impulsionando seu desenvolvimento com IA
